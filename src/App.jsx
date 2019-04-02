@@ -7,6 +7,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Header from './Header.jsx';
 
+const styles = {};
+
 class App extends Component {
   render(){
     return(
@@ -16,5 +18,7 @@ class App extends Component {
     );
   }
 }
+
+App.propTypes = {};
 
 export default hot(module)(withStyles(styles)(App));

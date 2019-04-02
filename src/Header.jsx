@@ -15,21 +15,19 @@ const styles = {
 class Header extends Component {
   render(){
     return(
-      <div className={this.props.classes.root}>
-        <AppBar position="static" color="default" className={this.props.classes.root}>
-          <Toolbar>
-            <Typography variant="h6" color="inherit">
-              materialreact
-            </Typography>
-          </Toolbar>
-        </AppBar>
-      </div>
+      <AppBar position="static" color="default" className={this.props.classes.root}>
+        <Toolbar>
+          <Typography variant="h6" color="inherit">
+            materialreact
+          </Typography>
+        </Toolbar>
+      </AppBar>
     );
   }
 }
 
 Header.propTypes = {
   classes: PropTypes.object.isRequired,
-};
+}
 
 export default hot(module)(withStyles(styles)(Header));
