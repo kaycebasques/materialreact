@@ -1,19 +1,35 @@
-import React, { Component} from "react";
-import {hot} from "react-hot-loader";
-import Button from '@material-ui/core/Button';
-import "./App.css";
+import React, { Component } from 'react';
+import { hot } from 'react-hot-loader';
+import { withStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
 
-class App extends Component{
+const styles = {
+  root: {
+    flexGrow: 1,
+  },
+};
+
+class App extends Component {
   render(){
     return(
-      <div className="App">
-        <h1> Hello, World! </h1>
-        <Button variant="contained" color="primary">
-          Click Me
-        </Button>
+      <div className={this.props.classes.root}>
+        <AppBar position="static" color="default" className={this.props.classes.root}>
+          <Toolbar>
+            <Typography variant="h6" color="inherit">
+              materialreact
+            </Typography>
+          </Toolbar>
+        </AppBar>
       </div>
     );
   }
 }
 
-export default hot(module)(App);
+App.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default hot(module)(withStyles(styles)(App));
